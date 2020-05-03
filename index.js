@@ -1,16 +1,37 @@
 function createSegmentDisplay(svgElement, userOptions = {}) {
-  const defaultOptions = { inactiveColor: 'grey', activeColor: 'red', hideSegments: [] };
+  const defaultOptions = { inactiveColor: '#242424', activeColor: '#F73F02', hideSegments: [] };
   const options = { ...defaultOptions, ...userOptions};
 
   const font = {
     ' ': [],
+    '.': [16],
     'A': [0, 1, 2, 3, 4, 5, 9, 13],
     'B': [2, 3, 4, 5, 6, 7, 11, 13, 15],
+    'C': [0, 1, 2, 3, 6, 7],
+    'D': [2, 3, 4, 5, 6, 7, 11, 15],
+    'E': [0, 1, 2, 3, 6, 7, 9],
+    'F': [0, 1, 2, 3, 9],
+    'G': [0, 1, 2, 3, 5, 6, 7, 13],
+    'H': [0, 1, 4, 5, 9, 13],
     'I': [2, 3, 6, 7, 11, 15],
+    'J': [0, 4, 5, 6, 7],
+    'K': [0, 1, 9, 12, 14],
+    'L': [0, 1, 6, 7],
+    'M': [0, 1, 4, 5, 10, 12 ],
     'N': [0, 1, 4, 5, 10, 14],
     'O': [0, 1, 2, 3, 4, 5, 6, 7],
+    'P': [0, 1, 2, 3, 4, 9, 13],
+    'Q': [0, 1, 2, 3, 4, 5, 6, 7, 14],
     'R': [0, 1, 2, 3, 4, 9, 13, 14],
     'R.': [0, 1, 2, 3, 4, 9, 13, 14, 16],
+    'S': [2, 3, 5, 6, 7, 10, 13],
+    'T': [2, 3, 11, 15],
+    'U': [0, 1, 4, 5, 6, 7],
+    'V': [0, 1, 8, 12],
+    'W': [0, 1, 4, 5, 8, 14],
+    'X': [8, 10, 12, 14],
+    'Y': [1, 4, 9, 13, 15],
+    'Z': [2, 3, 6, 7, 8, 12],
     'CURL1': [0, 1, 2, 10, 11],
     'CURL2': [1, 2, 3, 4, 12, 13],
     'CURL3': [4, 5, 6, 14, 15],
@@ -72,6 +93,39 @@ function createSegmentDisplay(svgElement, userOptions = {}) {
   return segmentDisplay;
 }
 
+const svg = document.querySelector('svg');
+
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ.';
+const curlSequence = ['CURL1', 'CURL2', 'CURL3', 'CURL4', 'CURL1', 'CURL2', 'CURL3', 'CURL4', 'CURL1', 'CURL2', 'CURL3', 'CURL4'];
+
+const alphabetDisplays = alphabet.split('').map((letter) => {
+  const hideSegments = letter === '.' ? [] : [16];
+  const clone = svg.cloneNode(true);
+  const display = createSegmentDisplay(clone, { hideSegments });
+
+  document.body.appendChild(clone);
+
+  return display;
+});
+
+alphabet.split('').forEach((letter, index) => {
+  setTimeout(() => {
+    alphabetDisplays[index].showSequence([...curlSequence, letter], {
+      delay: 50
+    });
+  }, 80 * index);
+
+});
+
+setTimeout(() => {
+  alphabetDisplays[alphabet.split('').length - 1].showSequence([' ', '.'], {
+    delay: 200,
+    loop: true
+  });
+}, 80 * alphabet.split('').length);
+
+return;
+
 const masterSvg = document.querySelector('svg');
 const svgs = [masterSvg];
 
@@ -94,8 +148,8 @@ const displays = [];
 
 svgs.forEach((svg, index) => {
   const display = createSegmentDisplay(svg, {
-    inactiveColor: '#111111',
-    activeColor: '#FBAE17',
+    inactiveColor: '#242424',
+    activeColor: '#F73F02',
     hideSegments: index === 4 ? [] : [16]
   });
 

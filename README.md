@@ -1,10 +1,11 @@
 # 16seg
 
 ![Animated preview showing 16 seg displays showing the alphabet](preview.gif)
+
 _Preview of what this repo does. Inspired by [Da Sul's Dribbble post](https://dribbble.com/shots/6717324-16-segment-display)._
 
 ## Setup
-This prototype installs [Parcel](https://github.com/parcel-bundler/parcel/).
+This repo uses [Parcel](https://github.com/parcel-bundler/parcel/) to bundle all the files and [InvlineSVG](https://github.com/jonnyhaynes/inline-svg#readme) to inline SVG markup in the examples.
 
 Run the following commands and open the localhost URL Parcel provides in the CLI.
 ```sh

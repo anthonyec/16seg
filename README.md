@@ -64,7 +64,7 @@ It can also contain arbitrary strings that represent certain segment configurati
 
 ```js
 const font = {
-   //...
+  //...
   'CURL1': [0, 1, 2, 10, 11],
   'CURL2': [1, 2, 3, 4, 12, 13],
   'CURL3': [4, 5, 6, 14, 15],
@@ -72,3 +72,5 @@ const font = {
   //...
 }
 ```
+
+This is quite a brute force approach, maybe this can be done in a smarter way like using bytes and math?

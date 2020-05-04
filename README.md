@@ -1,6 +1,7 @@
 # 16seg
 
 ![Animated preview showing 16 seg displays showing the alphabet](preview.gif)
+_Preview of what this repo does. Inspired by [Da Sul's Dribbble post](https://dribbble.com/shots/6717324-16-segment-display)._
 
 ## Setup
 This prototype installs [Parcel](https://github.com/parcel-bundler/parcel/).
@@ -40,3 +41,6 @@ const display = createSegmentDisplay(svg, {
 // Ta-da!
 display.showSequence(['A', 'B', 'C']);
 ```
+
+## How it works
+The `16seg.svg` file contains all the segments as SVG polygons. Each polygon in the SVG is in a specifc order.

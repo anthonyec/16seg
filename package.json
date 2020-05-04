@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "marked": "^1.0.0",
     "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "inline-svg": "^2.2.3"
   }
 }

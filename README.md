@@ -47,6 +47,8 @@ display.showSequence(['A', 'B', 'C']);
 ### The SVG file
 The `16seg.svg` file contains all the segments as SVG polygons. Each polygon in the SVG is in a specifc order.
 
+![Diagram showing which segment has what number](numbered.jpg)
+
 ### Font
 A `font` is a key value map of characters and an array of numbers that say which segment should be highlighted. The current font is built in.
 

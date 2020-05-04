@@ -73,4 +73,4 @@ const font = {
 }
 ```
 
-This is quite a brute force approach, maybe this can be done in a smarter way like using bytes and math?
+This is quite a brute force approach, but it works! However, maybe this can be done in a smarter way like using bytes and math. Let me know if so!

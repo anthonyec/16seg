@@ -29,7 +29,7 @@ const display = createSegmentDisplay(svg);
 // Show a letter on the display!
 display.show('A');
 ```
-## Animated
+### Animated
 ```js
 const svg = document.querySelector('svg');
 

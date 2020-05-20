@@ -1,4 +1,4 @@
-# 16seg
+# 📟 16seg
 
 ![Animated preview showing 16 seg displays showing the alphabet](preview.gif)
 
